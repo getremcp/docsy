@@ -25,6 +25,15 @@ jobs:
       - run: npm test
       - run: npm pack --workspace @remcp/docsy-sdk --dry-run --json > /tmp/sdk-pack.json
       - run: npm pack --workspace @remcp/docsy-cli --dry-run --json > /tmp/cli-pack.json
+      - name: Validate Gemini CLI extension manifest
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const m=JSON.parse(fs.readFileSync('gemini-extension.json'));
+          if (m.name!=='docsy' || !/^\d+\.\d+\.\d+$/.test(m.version)) throw new Error('Invalid Gemini manifest version');
+          if (m.mcpServers?.docsy?.httpUrl!=='https://docsy.remcp.site/mcp/registry') throw new Error('Unexpected MCP URL');
+          if (m.contextFileName!=='GEMINI.md' || !fs.statSync('GEMINI.md').size) throw new Error('Missing Gemini context');
+          JS
       - name: Verify release tag and npm package version
         if: github.event_name == 'release'
         env:
@@ -33,8 +42,9 @@ jobs:
           node --input-type=module <<'JS'
           import fs from 'node:fs';
           const tag=process.env.TAG;
-          const match=/^(sdk|cli)-v(\d+\.\d+\.\d+)$/.exec(tag);
+          const match=/^(sdk|cli|gemini)-v(\d+\.\d+\.\d+)$/.exec(tag);
           if (!match) throw new Error('Unexpected public release tag: '+tag);
-          const pkg=JSON.parse(fs.readFileSync('packages/'+match[1]+'/package.json'));
+          const file=match[1]==='gemini'?'gemini-extension.json':'packages/'+match[1]+'/package.json';
+          const pkg=JSON.parse(fs.readFileSync(file));
           if (pkg.version!==match[2]) throw new Error('Release tag and package version differ');
           JS

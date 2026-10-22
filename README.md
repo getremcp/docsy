@@ -11,6 +11,8 @@
   <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-1f2328?style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy/releases"><img alt="GitHub releases" src="https://img.shields.io/github/v/release/getremcp/docsy?style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy-plugin"><img alt="MCP plugin" src="https://img.shields.io/badge/MCP-plugin-1f2328?style=flat-square"></a>
+  <a href="https://geminicli.com/docs/extensions/"><img alt="Gemini CLI" src="https://img.shields.io/badge/Gemini%20CLI-extension-1f2328?style=flat-square"></a>
+  <a href="https://kiro.dev/docs/powers/installation/"><img alt="Kiro Power" src="https://img.shields.io/badge/Kiro-custom%20power-1f2328?style=flat-square"></a>
 </p>
 
 <p align="center"><a href="https://docsy.remcp.site">Website</a> · <a href="https://docsy.remcp.site/docs">Documentation</a> · <a href="https://github.com/getremcp/docsy-plugin">Plugin</a> · <a href="https://github.com/getremcp/docsy/releases">Releases</a> · <a href="https://docsy.remcp.site/privacy">Privacy</a> · <a href="https://docsy.remcp.site/support">Support</a></p>
@@ -33,6 +35,23 @@ For MCP-capable agents, use the hosted endpoint `https://docsy.remcp.site/mcp/re
 | --- | --- | --- |
 | [`@remcp/docsy-sdk`](https://www.npmjs.com/package/@remcp/docsy-sdk) | [packages/sdk](packages/sdk) | TypeScript/JavaScript API client |
 | [`@remcp/docsy-cli`](https://www.npmjs.com/package/@remcp/docsy-cli) | [packages/cli](packages/cli) | Terminal documentation and MCP setup |
+
+## Gemini CLI and Kiro
+
+Install the public Docsy Gemini CLI extension (remote, read-only MCP plus
+source-link guidance) straight from the tagged repository:
+
+```sh
+gemini extensions install https://github.com/getremcp/docsy
+```
+
+The `gemini-cli-extension` GitHub topic makes the release eligible for the
+Gemini Extension Gallery's periodic indexing. A valid manifest does **not**
+guarantee immediate gallery visibility.
+
+For Kiro, the [Docsy Agent Plugin](https://github.com/getremcp/docsy-plugin)
+can be imported via **Powers → Add Custom Power → Import from GitHub**.
+This is community/custom installation, not a claim of curated Kiro listing.
 
 ## Release policy
 

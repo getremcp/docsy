@@ -1,0 +1,11 @@
+{
+  "name": "docsy",
+  "version": "1.0.0",
+  "description": "Free version-aware developer documentation with original source links through Docsy remote MCP.",
+  "mcpServers": {
+    "docsy": {
+      "httpUrl": "https://docsy.remcp.site/mcp/registry"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
