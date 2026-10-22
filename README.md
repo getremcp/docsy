@@ -23,6 +23,8 @@
 
 This public repository contains the reviewed **TypeScript SDK**, **terminal CLI**, and **Gemini CLI extension**. Hosted search, ingestion, private infrastructure and credentials are not included.
 
+**[Complete installation guide](https://github.com/getremcp/docsy-plugin/blob/main/docs/GETTING-STARTED.md)** — step-by-step connection instructions for Codex, Claude, Cursor, VS Code, ChatGPT, Gemini and the npm packages.
+
 ## Start in 30 seconds
 
 | I want to… | Do this |
