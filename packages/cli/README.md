@@ -1,25 +1,80 @@
-# @remcp/docsy-cli
+# Docsy CLI
 
-Command-line client for the Docsy public documentation API and MCP setup.
+**Find version-aware library documentation from the terminal**, with original source links, and configure supported AI coding clients to connect to Docsy.
+
+[Website](https://docsy.remcp.site) · [Documentation](https://docsy.remcp.site/docs) · [npm](https://www.npmjs.com/package/@remcp/docsy-cli) · [Source and releases](https://github.com/getremcp/docsy) · [Issues](https://github.com/getremcp/docsy/issues)
 
 ## Install
 
-```sh
+Requires Node.js 22 or newer.
+
+~~~sh
 npm install --global @remcp/docsy-cli
-```
+docsy --help
+~~~
 
-## Use
+For a one-off run without global installation:
 
-```sh
+~~~sh
+npx --yes --package=@remcp/docsy-cli docsy library react
+~~~
+
+## Search documentation
+
+~~~sh
+# Find an indexed library and its versions
 docsy library react
-docsy search "effect cleanup" --library react
+
+# Retrieve documentation context with source links
 docsy docs /reactjs/react.dev "useEffect cleanup"
-docsy setup --claude
+
+# Search within one library
+docsy search "useEffect cleanup" --library react
+
+# Retrieve structured output for automation
+docsy library react --json
+
+# Print the Docsy MCP server URL (does not start a local server)
 docsy mcp
-```
+~~~
 
-For one-off use, run `npx @remcp/docsy-cli --help`.
+You can use `docsy --help`, `docsy -h` or `docsy help` to see the command reference.
 
-The `@remcp/docsy-cli` package declares an exact compatible `@remcp/docsy-sdk` dependency; the SDK must be published first. Anonymous queries are limited to public documentation. MIT License, copyright Anton Baider.
+## Connect an AI coding client
 
-Documentation: https://docsy.remcp.site/docs
+Docsy provides a **remote** Streamable HTTP MCP server. You do not need to run the Docsy backend yourself.
+
+~~~sh
+# Codex CLI (MCP configuration)
+codex mcp add docsy --url https://docsy.remcp.site/mcp
+
+# Claude Code (remote HTTP MCP server)
+claude mcp add --transport http docsy https://docsy.remcp.site/mcp
+
+# Or generate client-specific configuration
+docsy setup --cursor
+docsy setup --claude
+docsy setup --codex
+~~~
+
+The **MCP endpoint currently requires OAuth 2.1 account authorization**. Finish the sign-in flow in your MCP client. For Codex CLI, run `codex mcp login docsy` after adding the server. If you get HTTP `401` from the MCP endpoint, authenticate instead of changing the endpoint URL. Setup only writes configuration; it does not grant access automatically.
+
+## API key and custom deployment
+
+Public documentation lookup through the HTTP API can be anonymous, subject to rate limits. For operations that require a Docsy API key, set `DOCSY_API_KEY` in your local environment, or pass `--api-key`; avoid placing keys in shared scripts or terminal history.
+
+~~~sh
+docsy library react --base-url https://docsy.remcp.site
+docsy --help
+~~~
+
+Supported commands include `library`, `docs`, `search`, `mcp`, `setup`, `metrics`, `refresh` and authenticated source-management operations. Run `docsy help` for flags.
+
+## Troubleshooting
+
+- **`docsy: command not found`:** install the package globally, or use `npx` as above.
+- **HTTP 401 from MCP:** complete OAuth authorization in your MCP-capable client.
+- **No results:** check the library ID with `docsy library <name>`; use an exact version when available.
+- **Need support?** See https://docsy.remcp.site/support.
+
+This CLI depends on a compatible exact version of [@remcp/docsy-sdk](https://www.npmjs.com/package/@remcp/docsy-sdk) and contains no hosted backend code. MIT License.

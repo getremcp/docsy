@@ -1,7 +1,7 @@
 {
   "name": "@remcp/docsy-sdk",
-  "version": "0.1.1",
-  "description": "TypeScript SDK for Docsy current documentation retrieval",
+  "version": "0.1.2",
+  "description": "Docsy TypeScript SDK: version-aware developer documentation and source-linked search",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -34,8 +34,20 @@
     "url": "git+https://github.com/getremcp/docsy.git",
     "directory": "packages/sdk"
   },
-  "homepage": "https://docsy.remcp.site/",
+  "homepage": "https://docsy.remcp.site/docs",
   "bugs": {
     "url": "https://github.com/getremcp/docsy/issues"
+  },
+  "keywords": [
+    "docsy",
+    "developer-documentation",
+    "typescript",
+    "sdk",
+    "mcp",
+    "source-links",
+    "search"
+  ],
+  "engines": {
+    "node": ">=22"
   }
 }
