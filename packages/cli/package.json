@@ -1,7 +1,7 @@
 {
   "name": "@remcp/docsy-cli",
-  "version": "0.1.2",
-  "description": "Docsy CLI for current documentation and MCP setup",
+  "version": "0.1.3",
+  "description": "Docsy CLI: search versioned developer docs with source links and configure MCP clients",
   "type": "module",
   "bin": {
     "docsy": "./dist/index.js"
@@ -17,7 +17,7 @@
     "lint": "eslint src test --ext .ts,.tsx,.js,.mjs"
   },
   "dependencies": {
-    "@remcp/docsy-sdk": "0.1.1"
+    "@remcp/docsy-sdk": "0.1.2"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
@@ -33,8 +33,20 @@
     "url": "git+https://github.com/getremcp/docsy.git",
     "directory": "packages/cli"
   },
-  "homepage": "https://docsy.remcp.site/",
+  "homepage": "https://docsy.remcp.site/docs",
   "bugs": {
     "url": "https://github.com/getremcp/docsy/issues"
+  },
+  "keywords": [
+    "docsy",
+    "cli",
+    "developer-documentation",
+    "mcp",
+    "codex",
+    "claude",
+    "source-links"
+  ],
+  "engines": {
+    "node": ">=22"
   }
 }
