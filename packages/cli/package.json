@@ -1,0 +1,40 @@
+{
+  "name": "@remcp/docsy-cli",
+  "version": "0.1.1",
+  "description": "Docsy CLI for current documentation and MCP setup",
+  "type": "module",
+  "bin": {
+    "docsy": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src test --ext .ts,.tsx,.js,.mjs"
+  },
+  "dependencies": {
+    "@remcp/docsy-sdk": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.4"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonbaider/docsy.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://docsy.remcp.site/",
+  "bugs": {
+    "url": "https://github.com/antonbaider/docsy/issues"
+  }
+}

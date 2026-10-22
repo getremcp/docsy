@@ -1,0 +1,13 @@
+{
+  "name": "docsy-public-client",
+  "private": true,
+  "version": "0.1.1",
+  "description": "Release-only public distribution of the Docsy SDK and CLI",
+  "workspaces": ["packages/sdk", "packages/cli"],
+  "scripts": {
+    "build": "npm run build --workspace @remcp/docsy-sdk && npm run build --workspace @remcp/docsy-cli",
+    "test": "npm run test --workspace @remcp/docsy-sdk && npm run test --workspace @remcp/docsy-cli",
+    "typecheck": "npm run typecheck --workspace @remcp/docsy-sdk && npm run typecheck --workspace @remcp/docsy-cli"
+  },
+  "engines": {"node": ">=22"}
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@remcp/docsy-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Docsy current documentation retrieval",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src test --ext .ts,.tsx,.js,.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.4"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonbaider/docsy.git",
+    "directory": "packages/sdk"
+  },
+  "homepage": "https://docsy.remcp.site/",
+  "bugs": {
+    "url": "https://github.com/antonbaider/docsy/issues"
+  }
+}
