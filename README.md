@@ -19,22 +19,81 @@
 
 # Docsy SDK and CLI
 
-This repository is the **public release distribution** for Docsy's open-source SDK and CLI. Production APIs, indexing infrastructure, private service code and development branches are deliberately excluded. Development happens in a separate private repository; this repository contains only reviewed snapshots intended for public releases.
+**Ask better questions of current developer documentation.** Docsy helps coding agents and developers find version-aware framework and SDK guidance with links to original documentation. Browse [Docsy](https://docsy.remcp.site) or see the [full product documentation](https://docsy.remcp.site/docs).
 
-## npm installation
+This public repository contains the reviewed **TypeScript SDK**, **terminal CLI**, and **Gemini CLI extension**. Hosted search, ingestion, private infrastructure and credentials are not included.
 
-```bash
-npm install @remcp/docsy-sdk
+## Start in 30 seconds
+
+| I want to… | Do this |
+| --- | --- |
+| Search documentation in the terminal | `npm install -g @remcp/docsy-cli` |
+| Call Docsy in TypeScript | `npm install @remcp/docsy-sdk` |
+| Connect an AI assistant with MCP | Add `https://docsy.remcp.site/mcp` and complete OAuth |
+| Install the packaged MCP plugin | Visit [getremcp/docsy-plugin](https://github.com/getremcp/docsy-plugin) |
+| Browse docs and setup instructions | Open [docsy.remcp.site/docs](https://docsy.remcp.site/docs) |
+
+**Requirements:** Node.js 22+ for the npm packages. Both packages are published to npm under the `@remcp` scope (not `@docsy`).
+
+### CLI quick start
+
+~~~sh
 npm install --global @remcp/docsy-cli
 docsy --help
-```
+docsy library react
+docsy docs /reactjs/react.dev "useEffect cleanup"
+docsy search "Next.js caching" --library next.js
+~~~
 
-For MCP-capable agents, use the hosted endpoint `https://docsy.remcp.site/mcp/registry`. No API key is required for anonymous public documentation queries.
+For one-off use without global installation:
 
-| Published npm package | Source | Purpose |
-| --- | --- | --- |
-| [`@remcp/docsy-sdk`](https://www.npmjs.com/package/@remcp/docsy-sdk) | [packages/sdk](packages/sdk) | TypeScript/JavaScript API client |
-| [`@remcp/docsy-cli`](https://www.npmjs.com/package/@remcp/docsy-cli) | [packages/cli](packages/cli) | Terminal documentation and MCP setup |
+~~~sh
+npx --yes --package=@remcp/docsy-cli docsy library react
+~~~
+
+### TypeScript quick start
+
+~~~sh
+npm install @remcp/docsy-sdk
+~~~
+
+~~~ts
+import { Docsy } from "@remcp/docsy-sdk";
+
+const client = new Docsy();
+const libraries = await client.searchLibrary("useEffect cleanup", "React");
+console.log(libraries.map(({ libraryId, versions }) => ({ libraryId, versions })));
+~~~
+
+See [SDK README](packages/sdk/README.md) and [CLI README](packages/cli/README.md) for full examples and troubleshooting.
+
+### Connect MCP clients
+
+The hosted MCP endpoint is **remote** and currently requires Docsy account authorization (OAuth 2.1). Public REST documentation lookup is separate and can be anonymous within service limits.
+
+~~~sh
+# Codex
+codex mcp add docsy --url https://docsy.remcp.site/mcp
+codex mcp login docsy
+
+# Claude Code
+claude mcp add --transport http docsy https://docsy.remcp.site/mcp
+~~~
+
+If you receive HTTP 401 when calling the MCP endpoint without credentials, complete your client's authorization flow. The `docsy mcp` command prints a URL; it does **not** start a server.
+
+## Official links and packages
+
+| Resource | Link |
+| --- | --- |
+| Website | https://docsy.remcp.site |
+| Documentation | https://docsy.remcp.site/docs |
+| SDK (npm) | https://www.npmjs.com/package/@remcp/docsy-sdk |
+| CLI (npm) | https://www.npmjs.com/package/@remcp/docsy-cli |
+| Public plugin | https://github.com/getremcp/docsy-plugin |
+| Support | https://docsy.remcp.site/support |
+| Privacy and terms | [Privacy](https://docsy.remcp.site/privacy) · [Terms](https://docsy.remcp.site/terms) |
+
 
 ## Gemini CLI and Kiro
 
