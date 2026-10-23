@@ -6,13 +6,14 @@
 
 <h1 align="center">Docsy SDK & CLI</h1>
 <p align="center"><strong>Current documentation. Exact versions. Verifiable sources.</strong></p>
-<p align="center">Bring source-linked, version-aware library docs into your terminal, TypeScript applications and AI coding workflows.</p>
+<p align="center">Search current and versioned developer documentation from your terminal or TypeScript app, with original source citations.</p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@remcp/docsy-sdk"><img alt="SDK latest version on npm" src="https://img.shields.io/npm/v/%40remcp%2Fdocsy-sdk?label=SDK&style=flat-square"></a>
   <a href="https://www.npmjs.com/package/@remcp/docsy-cli"><img alt="CLI latest version on npm" src="https://img.shields.io/npm/v/%40remcp%2Fdocsy-cli?label=CLI&style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/getremcp/docsy?style=flat-square"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-1f2328?style=flat-square"></a>
+  <a href="package.json"><img alt="Node.js 22 or later" src="https://img.shields.io/badge/Node.js-22%2B-1f2328?style=flat-square"></a>
 </p>
 <p align="center">
   <a href="https://github.com/getremcp/docsy/actions/workflows/public-packages.yml"><img alt="SDK and CLI CI" src="https://img.shields.io/github/actions/workflow/status/getremcp/docsy/public-packages.yml?branch=main&label=build%20%26%20tests&style=flat-square"></a>
