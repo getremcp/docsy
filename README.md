@@ -1,129 +1,115 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/getremcp/docsy-plugin/main/assets/docsy-wordmark.svg" width="230" alt="Docsy">
+  <a href="https://docsy.remcp.site">
+    <img src="https://raw.githubusercontent.com/getremcp/docsy-plugin/main/assets/docsy-icon-192.png" width="104" height="104" alt="Docsy — source-linked developer documentation">
+  </a>
 </p>
 
-<p align="center"><strong>Developer documentation with verifiable source links. Free, version-aware, available over MCP.</strong></p>
+<h1 align="center">Docsy SDK & CLI</h1>
+<p align="center"><strong>Current documentation. Exact versions. Verifiable sources.</strong></p>
+<p align="center">Bring source-linked, version-aware library docs into your terminal, TypeScript applications and AI coding workflows.</p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@remcp/docsy-sdk"><img alt="npm SDK" src="https://img.shields.io/npm/v/%40remcp%2Fdocsy-sdk?style=flat-square&label=SDK"></a>
-  <a href="https://www.npmjs.com/package/@remcp/docsy-cli"><img alt="npm CLI" src="https://img.shields.io/npm/v/%40remcp%2Fdocsy-cli?style=flat-square&label=CLI"></a>
-  <a href="https://www.npmjs.com/package/@remcp/docsy-sdk"><img alt="downloads" src="https://img.shields.io/npm/dm/%40remcp%2Fdocsy-sdk?style=flat-square&label=downloads"></a>
-  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-1f2328?style=flat-square"></a>
-  <a href="https://github.com/getremcp/docsy/releases"><img alt="GitHub releases" src="https://img.shields.io/github/v/release/getremcp/docsy?style=flat-square"></a>
-  <a href="https://github.com/getremcp/docsy-plugin"><img alt="MCP plugin" src="https://img.shields.io/badge/MCP-plugin-1f2328?style=flat-square"></a>
-  <a href="https://geminicli.com/docs/extensions/"><img alt="Gemini CLI" src="https://img.shields.io/badge/Gemini%20CLI-extension-1f2328?style=flat-square"></a>
-  <a href="https://kiro.dev/docs/powers/installation/"><img alt="Kiro Power" src="https://img.shields.io/badge/Kiro-custom%20power-1f2328?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@remcp/docsy-sdk"><img alt="SDK latest version on npm" src="https://img.shields.io/npm/v/%40remcp%2Fdocsy-sdk?label=SDK&style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@remcp/docsy-cli"><img alt="CLI latest version on npm" src="https://img.shields.io/npm/v/%40remcp%2Fdocsy-cli?label=CLI&style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@remcp/docsy-sdk"><img alt="SDK monthly npm downloads" src="https://img.shields.io/npm/dm/%40remcp%2Fdocsy-sdk?label=SDK%20downloads&style=flat-square"></a>
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-1f2328?style=flat-square"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/getremcp/docsy/actions/workflows/public-packages.yml"><img alt="SDK and CLI CI" src="https://img.shields.io/github/actions/workflow/status/getremcp/docsy/public-packages.yml?branch=main&label=build%20%26%20tests&style=flat-square"></a>
+  <a href="https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0"><img alt="Gemini CLI extension version 1.0.0" src="https://img.shields.io/badge/Gemini%20CLI-extension%201.0.0-1f2328?style=flat-square"></a>
+  <a href="https://github.com/getremcp/docsy-plugin/releases/latest"><img alt="Stable MCP plugin release" src="https://img.shields.io/github/v/release/getremcp/docsy-plugin?label=MCP%20plugin&style=flat-square"></a>
 </p>
 
-<p align="center"><a href="https://docsy.remcp.site">Website</a> · <a href="https://docsy.remcp.site/docs">Documentation</a> · <a href="https://github.com/getremcp/docsy-plugin">Plugin</a> · <a href="https://github.com/getremcp/docsy/releases">Releases</a> · <a href="https://docsy.remcp.site/privacy">Privacy</a> · <a href="https://docsy.remcp.site/support">Support</a></p>
+<p align="center">
+  <a href="https://docsy.remcp.site">Website</a> ·
+  <a href="https://docsy.remcp.site/docs">Documentation</a> ·
+  <a href="https://github.com/getremcp/docsy-plugin"><strong>AI / MCP Plugin ↗</strong></a> ·
+  <a href="https://github.com/getremcp/docsy"><strong>SDK & CLI ↗</strong></a> ·
+  <a href="https://github.com/getremcp/docsy/releases">Releases</a> ·
+  <a href="https://docsy.remcp.site/support">Support</a>
+</p>
 
-# Docsy SDK and CLI
+---
 
-**Ask better questions of current developer documentation.** Docsy helps coding agents and developers find version-aware framework and SDK guidance with links to original documentation. Browse [Docsy](https://docsy.remcp.site) or see the [full product documentation](https://docsy.remcp.site/docs).
+## Choose the right Docsy integration
 
-This public repository contains the reviewed **TypeScript SDK**, **terminal CLI**, and **Gemini CLI extension**. Hosted search, ingestion, private infrastructure and credentials are not included.
-
-**[Complete installation guide](https://github.com/getremcp/docsy-plugin/blob/main/docs/GETTING-STARTED.md)** — step-by-step connection instructions for Codex, Claude, Cursor, VS Code, ChatGPT, Gemini and the npm packages.
-
-## Start in 30 seconds
-
-| I want to… | Do this |
+| I want to… | Use |
 | --- | --- |
-| Search documentation in the terminal | `npm install -g @remcp/docsy-cli` |
-| Call Docsy in TypeScript | `npm install @remcp/docsy-sdk` |
-| Connect an AI assistant with MCP | Add `https://docsy.remcp.site/mcp` and complete OAuth |
-| Install the packaged MCP plugin | Visit [getremcp/docsy-plugin](https://github.com/getremcp/docsy-plugin) |
-| Browse docs and setup instructions | Open [docsy.remcp.site/docs](https://docsy.remcp.site/docs) |
+| **Connect ChatGPT, Claude Code, Codex, Cursor or another AI client** | **[Docsy AI / MCP Plugin →](https://github.com/getremcp/docsy-plugin)** — installation guides, supported-client manifests and versioned ZIP packages |
+| **Search documentation in a terminal** | **[Docsy CLI](packages/cli/README.md)** — published on [npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
+| **Call Docsy from TypeScript or JavaScript** | **[Docsy SDK](packages/sdk/README.md)** — published on [npm](https://www.npmjs.com/package/@remcp/docsy-sdk) |
+| **Use Gemini CLI** | **[Gemini CLI extension](https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0)** — tagged public GitHub integration |
+| **Use MCP directly** | Connect the hosted endpoint `https://docsy.remcp.site/mcp/registry` and authorize your Docsy account |
 
-**Requirements:** Node.js 22+ for the npm packages. Both packages are published to npm under the `@remcp` scope (not `@docsy`).
+**The [AI / MCP Plugin repository](https://github.com/getremcp/docsy-plugin) is separate from this SDK / CLI repository.** Both connect to the same remote Docsy documentation service. Neither includes the private crawler, index database or production backend.
 
-### CLI quick start
+## Quick start
 
-~~~sh
+Requires **Node.js 22 or later**.
+
+### Terminal / CLI
+
+```sh
 npm install --global @remcp/docsy-cli
+
 docsy --help
 docsy library react
 docsy docs /reactjs/react.dev "useEffect cleanup"
 docsy search "Next.js caching" --library next.js
-~~~
+```
 
-For one-off use without global installation:
+Run once without a global installation:
 
-~~~sh
+```sh
 npx --yes --package=@remcp/docsy-cli docsy library react
-~~~
+```
 
-### TypeScript quick start
+### TypeScript SDK
 
-~~~sh
+```sh
 npm install @remcp/docsy-sdk
-~~~
+```
 
-~~~ts
+```ts
 import { Docsy } from "@remcp/docsy-sdk";
 
 const client = new Docsy();
 const libraries = await client.searchLibrary("useEffect cleanup", "React");
 console.log(libraries.map(({ libraryId, versions }) => ({ libraryId, versions })));
-~~~
-
-See [SDK README](packages/sdk/README.md) and [CLI README](packages/cli/README.md) for full examples and troubleshooting.
-
-### Connect MCP clients
-
-The hosted MCP endpoint is **remote** and currently requires Docsy account authorization (OAuth 2.1). Public REST documentation lookup is separate and can be anonymous within service limits.
-
-~~~sh
-# Codex
-codex mcp add docsy --url https://docsy.remcp.site/mcp
-codex mcp login docsy
-
-# Claude Code
-claude mcp add --transport http docsy https://docsy.remcp.site/mcp
-~~~
-
-If you receive HTTP 401 when calling the MCP endpoint without credentials, complete your client's authorization flow. The `docsy mcp` command prints a URL; it does **not** start a server.
-
-## Official links and packages
-
-| Resource | Link |
-| --- | --- |
-| Website | https://docsy.remcp.site |
-| Documentation | https://docsy.remcp.site/docs |
-| SDK (npm) | https://www.npmjs.com/package/@remcp/docsy-sdk |
-| CLI (npm) | https://www.npmjs.com/package/@remcp/docsy-cli |
-| Public plugin | https://github.com/getremcp/docsy-plugin |
-| Support | https://docsy.remcp.site/support |
-| Privacy and terms | [Privacy](https://docsy.remcp.site/privacy) · [Terms](https://docsy.remcp.site/terms) |
-
-
-## Gemini CLI and Kiro
-
-Install the public Docsy Gemini CLI extension (remote, read-only MCP plus
-source-link guidance) straight from the tagged repository:
-
-```sh
-gemini extensions install https://github.com/getremcp/docsy
 ```
 
-The `gemini-cli-extension` GitHub topic makes the release eligible for the
-Gemini Extension Gallery's periodic indexing. A valid manifest does **not**
-guarantee immediate gallery visibility.
+Explore the [SDK reference](packages/sdk/README.md) and [CLI reference](packages/cli/README.md) for additional examples.
 
-For Kiro, the [Docsy Agent Plugin](https://github.com/getremcp/docsy-plugin)
-can be imported via **Powers → Add Custom Power → Import from GitHub**.
-This is community/custom installation, not a claim of curated Kiro listing.
+### MCP for coding agents
 
-## Release policy
+MCP is a **hosted service**, not a local executable. Connect with an OAuth 2.1-capable MCP client and complete the sign-in prompt.
 
-**No development or feature branches in this public repository.** Changes are authored, reviewed, tested, and versioned in the private source repository before release-only publication here. Public tags are package-specific: `sdk-vX.Y.Z` and `cli-vX.Y.Z`. Each published npm package remains immutable. CI checks both public packages before distribution.
+```sh
+# Claude Code
+claude mcp add --transport http docsy https://docsy.remcp.site/mcp/registry
 
-This repository contains no production secrets, credentials, database records, scraper infrastructure, or hosted backend implementation.
+# Codex CLI
+codex mcp add docsy --url https://docsy.remcp.site/mcp/registry
+codex mcp login docsy
+```
 
-## MCP plugin and marketplaces
+An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor and other client-specific instructions, use the **[full AI plugin setup guide](https://github.com/getremcp/docsy-plugin/blob/main/docs/GETTING-STARTED.md)**.
 
-The separate [Docsy plugin distribution](https://github.com/getremcp/docsy-plugin) provides ChatGPT/Codex, Claude Code and Cursor configuration, catalog status and signed-off ZIP releases. Check its [distribution matrix](https://github.com/getremcp/docsy-plugin/releases) for stable or pre-release packages.
+## Verified distribution channels
 
-## License
+| Surface | Current release | Install / source |
+| --- | --- | --- |
+| TypeScript SDK | [`sdk-v0.1.2`](https://github.com/getremcp/docsy/releases/tag/sdk-v0.1.2) | [`@remcp/docsy-sdk` on npm](https://www.npmjs.com/package/@remcp/docsy-sdk) |
+| Terminal CLI | [`cli-v0.1.3`](https://github.com/getremcp/docsy/releases/tag/cli-v0.1.3) | [`@remcp/docsy-cli` on npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
+| Gemini CLI | [`gemini-v1.0.0`](https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0) | [Extension metadata](gemini-extension.json) |
+| MCP Plugin | [Stable releases](https://github.com/getremcp/docsy-plugin/releases/latest) | [Plugin / AI-client distribution](https://github.com/getremcp/docsy-plugin) |
 
-The public SDK and CLI are MIT licensed. See [LICENSE](LICENSE).
+CLI v0.1.3 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
+
+## Trust and release policy
+
+This is a **public release-only source snapshot**, not the development repository. The private source is built and tested before approved files are promoted through a protected GitHub pull request. Tags are package-specific (`sdk-vX.Y.Z`, `cli-vX.Y.Z`, `gemini-vX.Y.Z`), and existing published npm versions remain immutable. The server's public documentation tools are read-only.
+
+[MIT License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Privacy](https://docsy.remcp.site/privacy) · [Terms](https://docsy.remcp.site/terms) · [Support](https://docsy.remcp.site/support)
+
+<p align="center"><sub>Docsy is an independent documentation service. Third-party trademarks remain with their respective owners.</sub></p>
