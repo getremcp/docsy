@@ -122,7 +122,7 @@ This repository contains no production secrets, credentials, database records, s
 
 ## MCP plugin and marketplaces
 
-The separate [Docsy plugin distribution](https://github.com/getremcp/docsy-plugin) provides ChatGPT/Codex, Claude Code and Cursor configuration, catalog status and signed-off ZIP releases. Check its [distribution matrix](https://github.com/getremcp/docsy-plugin/blob/main/docs/DISTRIBUTION-STATUS.md) for confirmed versus pending marketplace listings.
+The separate [Docsy plugin distribution](https://github.com/getremcp/docsy-plugin) provides ChatGPT/Codex, Claude Code and Cursor configuration, catalog status and signed-off ZIP releases. Check its [distribution matrix](https://github.com/getremcp/docsy-plugin/releases) for stable or pre-release packages.
 
 ## License
 
