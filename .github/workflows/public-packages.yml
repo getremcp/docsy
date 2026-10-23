@@ -19,6 +19,26 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Reject unvetted public source paths
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          actual=set(subprocess.check_output(['git','ls-files'],text=True).splitlines())
+          roots={
+            '.github/workflows/public-packages.yml','.gitignore','.npmrc',
+            'CONTRIBUTING.md','LICENSE','README.md','THIRD_PARTY_NOTICES.md',
+            'package.json','package-lock.json','GEMINI.md','gemini-extension.json',
+          }
+          packages={f for f in actual if f.startswith(('packages/sdk/','packages/cli/'))}
+          for f in packages:
+            rel=f.split('/',2)[2]
+            assert rel.startswith(('src/','test/')) or rel in {
+              'LICENSE','README.md','package.json','tsconfig.json',
+            }, 'unvetted package file: '+f
+          assert actual==roots|packages, 'Unapproved files: '+str(sorted(actual-(roots|packages)))
+          assert len(packages)>0
+          print('Public source boundary PASS:',len(actual),'files')
+          PY
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run build
       - run: npm run typecheck
