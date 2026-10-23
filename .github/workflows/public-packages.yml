@@ -1,0 +1,70 @@
+name: Verify public SDK and CLI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Build, test and package SDK/CLI
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Reject unvetted public source paths
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          actual=set(subprocess.check_output(['git','ls-files'],text=True).splitlines())
+          roots={
+            '.github/workflows/public-packages.yml','.gitignore','.npmrc',
+            'CONTRIBUTING.md','LICENSE','README.md','THIRD_PARTY_NOTICES.md',
+            'package.json','package-lock.json','GEMINI.md','gemini-extension.json',
+          }
+          packages={f for f in actual if f.startswith(('packages/sdk/','packages/cli/'))}
+          for f in packages:
+            rel=f.split('/',2)[2]
+            assert rel.startswith(('src/','test/')) or rel in {
+              'LICENSE','README.md','package.json','tsconfig.json',
+            }, 'unvetted package file: '+f
+          assert actual==roots|packages, 'Unapproved files: '+str(sorted(actual-(roots|packages)))
+          assert len(packages)>0
+          print('Public source boundary PASS:',len(actual),'files')
+          PY
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run build
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm pack --workspace @remcp/docsy-sdk --dry-run --json > /tmp/sdk-pack.json
+      - run: npm pack --workspace @remcp/docsy-cli --dry-run --json > /tmp/cli-pack.json
+      - name: Validate Gemini CLI extension manifest
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const m=JSON.parse(fs.readFileSync('gemini-extension.json'));
+          if (m.name!=='docsy' || !/^\d+\.\d+\.\d+$/.test(m.version)) throw new Error('Invalid Gemini manifest version');
+          if (m.mcpServers?.docsy?.httpUrl!=='https://docsy.remcp.site/mcp/registry') throw new Error('Unexpected MCP URL');
+          if (m.contextFileName!=='GEMINI.md' || !fs.statSync('GEMINI.md').size) throw new Error('Missing Gemini context');
+          JS
+      - name: Verify release tag and npm package version
+        if: github.event_name == 'release'
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const tag=process.env.TAG;
+          const match=/^(sdk|cli|gemini)-v(\d+\.\d+\.\d+)$/.exec(tag);
+          if (!match) throw new Error('Unexpected public release tag: '+tag);
+          const file=match[1]==='gemini'?'gemini-extension.json':'packages/'+match[1]+'/package.json';
+          const pkg=JSON.parse(fs.readFileSync(file));
+          if (pkg.version!==match[2]) throw new Error('Release tag and package version differ');
+          JS
