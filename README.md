@@ -50,6 +50,10 @@
 
 **The [AI / MCP Plugin repository](https://github.com/getremcp/docsy-plugin) is separate from this SDK / CLI repository.** Both connect to the same remote Docsy documentation service. Neither includes the private crawler, index database or production backend.
 
+## MCP tools for AI assistants
+
+Docsy's companion [AI / MCP Plugin](https://github.com/getremcp/docsy-plugin#tools) offers five read-only tools: `resolve-library-id`, `list-library-versions`, `query-docs`, `search`, and `fetch`. They retrieve versioned public documentation and publisher source links through `https://docsy.remcp.site/mcp/registry` with OAuth 2.1. This repository ships the separate SDK and CLI; the public plugin repository is the installation and tool reference for AI clients.
+
 ## Quick start
 
 Requires **Node.js 22 or later**.
