@@ -119,6 +119,8 @@ An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor 
 | LibHunt | [getremcp/docsy project page](https://www.libhunt.com/r/getremcp/docsy) | Publicly listed and automatically approved 24 Oct 2026; SDK and CLI source |
 | Claude Code community | [Marketplace manifest](https://github.com/getremcp/docsy-plugin/blob/main/.claude-plugin/marketplace.json) | Install from GitHub; not official Anthropic marketplace approval |
 
+For direct directory links, outstanding reviews and the Smithery transition, see the [public distribution status](https://github.com/getremcp/docsy-plugin/blob/main/docs/DISTRIBUTION-STATUS.md).
+
 The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#discover-docsy) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
 
 CLI v0.1.3 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
