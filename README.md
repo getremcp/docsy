@@ -111,8 +111,10 @@ An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor 
 | Gemini CLI | [`gemini-v1.0.0`](https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0) | [Extension metadata](gemini-extension.json) |
 | MCP Plugin | [Stable releases](https://github.com/getremcp/docsy-plugin/releases/latest) | [Plugin / AI-client distribution](https://github.com/getremcp/docsy-plugin) |
 | Official MCP Registry | [`io.github.getremcp/docsy`](https://registry.modelcontextprotocol.io/?q=io.github.getremcp%2Fdocsy) | Active version `1.0.9` (24 Oct 2026) |
-| Glama | [Docsy remote MCP connector](https://glama.ai/mcp/connectors/io.github.getremcp/docsy) | Public listing; publisher ownership claim pending |
+| Glama | [Docsy remote MCP connector](https://glama.ai/mcp/connectors/io.github.getremcp/docsy) | Listed and publisher-claimed (24 Oct 2026); domain DNS verified and OAuth connection tested |
 | Claude Code community | [Marketplace manifest](https://github.com/getremcp/docsy-plugin/blob/main/.claude-plugin/marketplace.json) | Install from GitHub; not official Anthropic marketplace approval |
+
+The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#discover-docsy) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
 
 CLI v0.1.3 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
 
