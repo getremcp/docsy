@@ -116,6 +116,7 @@ An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor 
 | MCP Plugin | [Stable releases](https://github.com/getremcp/docsy-plugin/releases/latest) | [Plugin / AI-client distribution](https://github.com/getremcp/docsy-plugin) |
 | Official MCP Registry | [`io.github.getremcp/docsy`](https://registry.modelcontextprotocol.io/?q=io.github.getremcp%2Fdocsy) | Active version `1.0.9` (24 Oct 2026) |
 | Glama | [Docsy remote MCP connector](https://glama.ai/mcp/connectors/io.github.getremcp/docsy) | Listed and publisher-claimed (24 Oct 2026); domain DNS verified and OAuth connection tested |
+| LibHunt | [getremcp/docsy project page](https://www.libhunt.com/r/getremcp/docsy) | Publicly listed and automatically approved 24 Oct 2026; SDK and CLI source |
 | Claude Code community | [Marketplace manifest](https://github.com/getremcp/docsy-plugin/blob/main/.claude-plugin/marketplace.json) | Install from GitHub; not official Anthropic marketplace approval |
 
 The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#discover-docsy) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
