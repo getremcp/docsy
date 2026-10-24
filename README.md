@@ -19,10 +19,11 @@
   <a href="https://github.com/getremcp/docsy/actions/workflows/public-packages.yml"><img alt="SDK and CLI CI" src="https://img.shields.io/github/actions/workflow/status/getremcp/docsy/public-packages.yml?branch=main&label=build%20%26%20tests&style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0"><img alt="Gemini CLI extension version 1.0.0" src="https://img.shields.io/badge/Gemini%20CLI-extension%201.0.0-1f2328?style=flat-square"></a>
   <a href="https://registry.modelcontextprotocol.io/?q=io.github.getremcp%2Fdocsy"><img alt="Official MCP Registry: active" src="https://img.shields.io/badge/MCP%20Registry-active-1f2328?style=flat-square"></a>
-  <a href="https://glama.ai/mcp/connectors/io.github.getremcp/docsy"><img alt="Glama: Docsy connector listed" src="https://img.shields.io/badge/Glama-listed-1f2328?style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy-plugin/blob/main/.claude-plugin/marketplace.json"><img alt="Claude Code community plugin" src="https://img.shields.io/badge/Claude%20Code-community%20plugin-1f2328?style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy-plugin/releases/latest"><img alt="Stable MCP plugin release" src="https://img.shields.io/github/v/release/getremcp/docsy-plugin?label=MCP%20plugin&style=flat-square"></a>
 </p>
+
+[![Docsy MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/io.github.getremcp/docsy/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.getremcp/docsy)
 
 <p align="center">
   <a href="https://docsy.remcp.site">Website</a> ·
