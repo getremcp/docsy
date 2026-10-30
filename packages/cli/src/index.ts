@@ -2,6 +2,7 @@
 import { Docsy } from "@remcp/docsy-sdk";
 import { setup,type Agent } from "./setup.js";
 import { wantsHelp } from "./help.js";
+import { detectProjectStack } from "./detect-stack.js";
 
 const args=process.argv.slice(2);
 const command=args.shift();
@@ -17,6 +18,7 @@ function help(){
     "Docsy — current documentation for AI coding agents",
     "",
     "Usage:",
+    "  docsy detect [directory] [--json]  # offline; never uploads your manifest",
     "  docsy library <name> [query] [--json]",
     "  docsy docs <libraryId> <query> [--fast] [--json]",
     "  docsy search <query> [--library NAME] [--version VERSION] [--language LANGUAGE] [--json]",
@@ -43,6 +45,16 @@ function help(){
 async function main(){
   if(wantsHelp(command,args)){help();return;}
   if(command==="mcp"){console.log(baseUrl.replace(/\/$/,"")+"/mcp");return;}
+  if(command==="detect"){
+    const directory=args[0]&&!args[0].startsWith("--")?args[0]:process.cwd();
+    const dependencies=await detectProjectStack(directory);
+    if(has("--json"))console.log(JSON.stringify(dependencies,null,2));
+    else {
+      if(!dependencies.length)console.log("No supported dependency manifests found.");
+      for(const entry of dependencies)console.log(`${entry.ecosystem.padEnd(6)} ${entry.name}${entry.version?" "+entry.version:""}`);
+    }
+    return;
+  }
   if(command==="library"){
     const name=args[0];if(!name)throw new Error("library name is required");
     const query=args[1]&&!args[1].startsWith("--")?args[1]:name;
