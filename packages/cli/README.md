@@ -38,6 +38,17 @@ docsy library react --json
 docsy mcp
 ~~~
 
+## Detect local dependencies (CLI 0.1.4)
+
+The `detect` command reads local project manifests to list dependencies from npm, Python, Cargo and Go without accessing the network, reading lockfile secrets, running package scripts, or uploading manifest contents.
+
+~~~sh
+docsy detect
+docsy detect ./my-project --json
+~~~
+
+Use the output to choose exact package versions before asking Docsy for version-aware documentation. Project detection is local-only and does not change the remote MCP service.
+
 You can use `docsy --help`, `docsy -h` or `docsy help` to see the command reference.
 
 ## Connect an AI coding client

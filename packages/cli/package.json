@@ -1,6 +1,6 @@
 {
   "name": "@remcp/docsy-cli",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Docsy CLI: search versioned developer docs with source links and configure MCP clients",
   "type": "module",
   "bin": {
