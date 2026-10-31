@@ -43,7 +43,7 @@ const docsy = new Docsy({
 });
 ~~~
 
-The **hosted MCP connection is separate from the SDK** and currently requires account authorization via OAuth 2.1. Connect your MCP client to https://docsy.remcp.site/mcp; a `401` from an unauthenticated MCP request is expected.
+The **hosted MCP connection is separate from the SDK** and currently requires account authorization via OAuth 2.1. Connect your MCP client to https://docsy.remcp.site/mcp/registry; a `401` from an unauthenticated MCP request is expected.
 
 ## Common methods
 
@@ -60,7 +60,7 @@ For `getContext` and `search`, choose `type: "txt"` for readable context, or `ty
 
 - **CLI:** [@remcp/docsy-cli](https://www.npmjs.com/package/@remcp/docsy-cli)
 - **MCP plugin:** [getremcp/docsy-plugin](https://github.com/getremcp/docsy-plugin)
-- **MCP endpoint:** https://docsy.remcp.site/mcp
+- **MCP endpoint:** https://docsy.remcp.site/mcp/registry
 - **Support:** https://docsy.remcp.site/support
 
 The published SDK contains client code and TypeScript declarations, **not** the hosted Docsy backend, indexing infrastructure or credentials. MIT License.

@@ -57,10 +57,10 @@ Docsy provides a **remote** Streamable HTTP MCP server. You do not need to run t
 
 ~~~sh
 # Codex CLI (MCP configuration)
-codex mcp add docsy --url https://docsy.remcp.site/mcp
+codex mcp add docsy --url https://docsy.remcp.site/mcp/registry
 
 # Claude Code (remote HTTP MCP server)
-claude mcp add --transport http docsy https://docsy.remcp.site/mcp
+claude mcp add --transport http docsy https://docsy.remcp.site/mcp/registry
 
 # Or generate client-specific configuration
 docsy setup --cursor
