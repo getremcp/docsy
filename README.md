@@ -56,7 +56,7 @@
 
 ## MCP tools for AI assistants
 
-Docsy's companion [AI / MCP Plugin](https://github.com/getremcp/docsy-plugin#tools) offers five read-only tools: `resolve-library-id`, `list-library-versions`, `query-docs`, `search`, and `fetch`. They retrieve versioned public documentation and publisher source links through `https://docsy.remcp.site/mcp/registry` with OAuth 2.1. This repository ships the separate SDK and CLI; the public plugin repository is the installation and tool reference for AI clients.
+Docsy's companion [AI / MCP Plugin](https://github.com/getremcp/docsy-plugin#mcp-tools) offers five read-only tools: `resolve-library-id`, `list-library-versions`, `query-docs`, `search`, and `fetch`. They retrieve versioned public documentation and publisher source links through `https://docsy.remcp.site/mcp/registry` with OAuth 2.1. This repository ships the separate SDK and CLI; the public plugin repository is the installation and tool reference for AI clients.
 
 ## Quick start
 
@@ -127,7 +127,7 @@ The [ChatGPT plugin link](https://chatgpt.com/plugins/plugin_asdk_app_6ad6814ca7
 
 For direct directory links, outstanding reviews and the Smithery transition, see the [public distribution status](https://github.com/getremcp/docsy-plugin/blob/main/docs/DISTRIBUTION-STATUS.md).
 
-The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#discover-docsy) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
+The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#where-docsy-is-published) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
 
 CLI v0.1.4 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
 
