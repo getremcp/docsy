@@ -17,6 +17,8 @@
 </p>
 <p align="center">
   <a href="https://github.com/getremcp/docsy/actions/workflows/public-packages.yml"><img alt="SDK and CLI CI" src="https://img.shields.io/github/actions/workflow/status/getremcp/docsy/public-packages.yml?branch=main&label=build%20%26%20tests&style=flat-square"></a>
+  <a href="https://chatgpt.com/plugins/plugin_asdk_app_6ad6814ca7708191956117b3a3b58eb5"><img alt="ChatGPT — open Docsy (publisher link)" src="https://img.shields.io/badge/ChatGPT-Open%20Docsy-10a37f?style=flat-square&logo=openai&logoColor=white"></a>
+  <a href="https://github.com/getremcp/docsy-plugin/actions/workflows/plugin-quality.yml"><img alt="Plugin CI" src="https://img.shields.io/github/actions/workflow/status/getremcp/docsy-plugin/plugin-quality.yml?branch=main&label=plugin%20CI&style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0"><img alt="Gemini CLI extension version 1.0.0" src="https://img.shields.io/badge/Gemini%20CLI-extension%201.0.0-1f2328?style=flat-square"></a>
   <a href="https://registry.modelcontextprotocol.io/?q=io.github.getremcp%2Fdocsy"><img alt="Official MCP Registry: active" src="https://img.shields.io/badge/MCP%20Registry-active-1f2328?style=flat-square"></a>
   <a href="https://github.com/getremcp/docsy-plugin/blob/main/.claude-plugin/marketplace.json"><img alt="Claude Code community plugin" src="https://img.shields.io/badge/Claude%20Code-community%20plugin-1f2328?style=flat-square"></a>
@@ -28,6 +30,7 @@
 </p>
 
 <p align="center">
+  <a href="https://chatgpt.com/plugins/plugin_asdk_app_6ad6814ca7708191956117b3a3b58eb5"><strong>Open in ChatGPT</strong></a> ·
   <a href="https://docsy.remcp.site">Website</a> ·
   <a href="https://docsy.remcp.site/docs">Documentation</a> ·
   <a href="https://github.com/getremcp/docsy-plugin"><strong>AI / MCP Plugin ↗</strong></a> ·
@@ -43,6 +46,7 @@
 | I want to… | Use |
 | --- | --- |
 | **Connect ChatGPT, Claude Code, Codex, Cursor or another AI client** | **[Docsy AI / MCP Plugin →](https://github.com/getremcp/docsy-plugin)** — installation guides, supported-client manifests and versioned ZIP packages |
+| **Open Docsy in ChatGPT** | [Publisher-provided ChatGPT plugin link](https://chatgpt.com/plugins/plugin_asdk_app_6ad6814ca7708191956117b3a3b58eb5) — availability varies; a direct link does not prove official store approval |
 | **Search documentation in a terminal** | **[Docsy CLI](packages/cli/README.md)** — published on [npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
 | **Call Docsy from TypeScript or JavaScript** | **[Docsy SDK](packages/sdk/README.md)** — published on [npm](https://www.npmjs.com/package/@remcp/docsy-sdk) |
 | **Use Gemini CLI** | **[Gemini CLI extension](https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0)** — tagged public GitHub integration |
@@ -111,7 +115,7 @@ An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor 
 | Surface | Current release | Install / source |
 | --- | --- | --- |
 | TypeScript SDK | [`sdk-v0.1.2`](https://github.com/getremcp/docsy/releases/tag/sdk-v0.1.2) | [`@remcp/docsy-sdk` on npm](https://www.npmjs.com/package/@remcp/docsy-sdk) |
-| Terminal CLI | [`cli-v0.1.3`](https://github.com/getremcp/docsy/releases/tag/cli-v0.1.3) | [`@remcp/docsy-cli` on npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
+| Terminal CLI | [`cli-v0.1.4`](https://github.com/getremcp/docsy/releases/tag/cli-v0.1.4) | [`@remcp/docsy-cli` on npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
 | Gemini CLI | [`gemini-v1.0.0`](https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0) | [Extension metadata](gemini-extension.json) |
 | MCP Plugin | [Stable releases](https://github.com/getremcp/docsy-plugin/releases/latest) | [Plugin / AI-client distribution](https://github.com/getremcp/docsy-plugin) |
 | Official MCP Registry | [`io.github.getremcp/docsy`](https://registry.modelcontextprotocol.io/?q=io.github.getremcp%2Fdocsy) | Active version `1.0.9` (24 Oct 2026) |
@@ -119,11 +123,13 @@ An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor 
 | LibHunt | [getremcp/docsy project page](https://www.libhunt.com/r/getremcp/docsy) | Publicly listed and automatically approved 24 Oct 2026; SDK and CLI source |
 | Claude Code community | [Marketplace manifest](https://github.com/getremcp/docsy-plugin/blob/main/.claude-plugin/marketplace.json) | Install from GitHub; not official Anthropic marketplace approval |
 
+The [ChatGPT plugin link](https://chatgpt.com/plugins/plugin_asdk_app_6ad6814ca7708191956117b3a3b58eb5) is publisher-provided. Availability depends on the account and platform; no independent official marketplace approval is claimed. ChatGPT-specific setup and vetted release assets are maintained in the [companion MCP plugin repository](https://github.com/getremcp/docsy-plugin#use-docsy-in-chatgpt).
+
 For direct directory links, outstanding reviews and the Smithery transition, see the [public distribution status](https://github.com/getremcp/docsy-plugin/blob/main/docs/DISTRIBUTION-STATUS.md).
 
 The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#discover-docsy) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
 
-CLI v0.1.3 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
+CLI v0.1.4 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
 
 ## Trust and release policy
 
