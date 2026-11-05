@@ -115,7 +115,7 @@ An unauthenticated HTTP 401 from this endpoint is expected. For ChatGPT, Cursor 
 | Surface | Current release | Install / source |
 | --- | --- | --- |
 | TypeScript SDK | [`sdk-v0.1.2`](https://github.com/getremcp/docsy/releases/tag/sdk-v0.1.2) | [`@remcp/docsy-sdk` on npm](https://www.npmjs.com/package/@remcp/docsy-sdk) |
-| Terminal CLI | [`cli-v0.1.4`](https://github.com/getremcp/docsy/releases/tag/cli-v0.1.4) | [`@remcp/docsy-cli` on npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
+| Terminal CLI | [`cli-v0.1.5`](https://github.com/getremcp/docsy/releases/tag/cli-v0.1.5) | [`@remcp/docsy-cli` on npm](https://www.npmjs.com/package/@remcp/docsy-cli) |
 | Gemini CLI | [`gemini-v1.0.0`](https://github.com/getremcp/docsy/releases/tag/gemini-v1.0.0) | [Extension metadata](gemini-extension.json) |
 | MCP Plugin | [Stable releases](https://github.com/getremcp/docsy-plugin/releases/latest) | [Plugin / AI-client distribution](https://github.com/getremcp/docsy-plugin) |
 | Official MCP Registry | [`io.github.getremcp/docsy`](https://registry.modelcontextprotocol.io/?q=io.github.getremcp%2Fdocsy) | Active version `1.0.9` (24 Oct 2026) |
@@ -129,7 +129,7 @@ For direct directory links, outstanding reviews and the Smithery transition, see
 
 The [Docsy MCP Plugin README](https://github.com/getremcp/docsy-plugin#where-docsy-is-published) tracks the wider community-directory review queue. Those submissions are not official client-store approvals.
 
-CLI v0.1.4 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
+CLI v0.1.5 depends on SDK v0.1.2. SDK and CLI releases are published through npm; their GitHub release pages identify immutable source tags and do not need duplicate package archives. A Gemini extension manifest is not a claim of official gallery approval.
 
 ## Trust and release policy
 

@@ -38,7 +38,7 @@ docsy library react --json
 docsy mcp
 ~~~
 
-## Detect local dependencies (CLI 0.1.4)
+## Detect local dependencies (CLI 0.1.5)
 
 The `detect` command reads local project manifests to list dependencies from npm, Python, Cargo and Go without accessing the network, reading lockfile secrets, running package scripts, or uploading manifest contents.
 
@@ -56,19 +56,41 @@ You can use `docsy --help`, `docsy -h` or `docsy help` to see the command refere
 Docsy provides a **remote** Streamable HTTP MCP server. You do not need to run the Docsy backend yourself.
 
 ~~~sh
-# Codex CLI (MCP configuration)
+# OpenCode V2: add, authorize in browser, verify
+opencode mcp add docsy --url https://docsy.remcp.site/mcp/registry
+opencode mcp auth docsy
+opencode mcp list
+
+# Codex CLI: add, login if OAuth did not start automatically, verify
 codex mcp add docsy --url https://docsy.remcp.site/mcp/registry
+codex mcp login docsy
+codex mcp list
 
-# Claude Code (remote HTTP MCP server)
+# Devin CLI: add, login, verify
+devin mcp add docsy https://docsy.remcp.site/mcp/registry
+devin mcp login docsy
+devin mcp list
+
+# Claude Code: add, login, verify; /mcp works inside Claude Code too
 claude mcp add --transport http docsy https://docsy.remcp.site/mcp/registry
+claude mcp login docsy
+claude mcp list
 
-# Or generate client-specific configuration
+# Gemini CLI: add and check; run /mcp auth docsy INSIDE Gemini CLI
+gemini mcp add --transport http docsy https://docsy.remcp.site/mcp/registry
+gemini mcp list
+
+# Or generate a client-specific configuration
 docsy setup --cursor
 docsy setup --claude
 docsy setup --codex
+docsy setup --vscode
+docsy setup --gemini
+docsy setup --opencode
+docsy setup --copilot
 ~~~
 
-The **MCP endpoint currently requires OAuth 2.1 account authorization**. Finish the sign-in flow in your MCP client. For Codex CLI, run `codex mcp login docsy` after adding the server. If you get HTTP `401` from the MCP endpoint, authenticate instead of changing the endpoint URL. Setup only writes configuration; it does not grant access automatically.
+The **MCP endpoint requires OAuth authorization**. Run the relevant client login command or interactive slash command after adding the server, approve Docsy access in the browser, then verify that Docsy tools can be called. Codex may initiate OAuth during the `add` command, so a second login is only needed if sign-in was not completed. For Cursor, VS Code/Copilot, Kiro, Antigravity and other GUI clients, authorize from their MCP server manager. A direct HTTP `401` before authentication is expected; do not change the endpoint or paste tokens into project files. `docsy setup` only writes configuration and prints client-specific next steps—it does not grant OAuth access.
 
 ## API key and custom deployment
 
