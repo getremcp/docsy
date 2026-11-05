@@ -50,7 +50,8 @@ async function installRule(agent:Agent,scope:"project"|"global"){
 
 export async function setup(agent:Agent,scope:"project"|"global",baseUrl:string,apiKey?:string){
   const cwd=process.cwd();
-  const mcpUrl=baseUrl.replace(/\/$/,"")+"/mcp";
+  const root=baseUrl.replace(/\/$/,"");
+  const mcpUrl=/\/mcp(?:\/registry)?$/.test(root)?root:root+"/mcp/registry";
   let path:string;
 
   if(agent==="codex"){
@@ -84,9 +85,14 @@ export async function setup(agent:Agent,scope:"project"|"global",baseUrl:string,
     if("urlKey" in spec&&spec.urlKey==="httpUrl"){
       const {url,...rest}=e;e={...rest,httpUrl:url};
     }
-    if(agent==="opencode")e={...e,enabled:true};
     if(agent==="copilot")e={...e,tools:["*"]};
-    await writeJson(path,mergeSection(cfg,spec.key,e));
+    if(agent==="opencode"){
+      // OpenCode V2 nests MCP servers under mcp.servers; V1 used mcp.docsy.
+      const mcp=(cfg.mcp&&typeof cfg.mcp==="object"&&!Array.isArray(cfg.mcp)?{...cfg.mcp}: {}) as Record<string,unknown>;
+      delete mcp.docsy;
+      const servers=(mcp.servers&&typeof mcp.servers==="object"&&!Array.isArray(mcp.servers)?mcp.servers:{}) as Record<string,unknown>;
+      await writeJson(path,{...cfg,mcp:{...mcp,servers:{...servers,docsy:e}}});
+    }else await writeJson(path,mergeSection(cfg,spec.key,e));
   }
   const rulePath=await installRule(agent,scope);
   return {configPath:path,rulePath,mcpUrl};

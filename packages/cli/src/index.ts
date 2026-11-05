@@ -44,7 +44,7 @@ function help(){
 }
 async function main(){
   if(wantsHelp(command,args)){help();return;}
-  if(command==="mcp"){console.log(baseUrl.replace(/\/$/,"")+"/mcp");return;}
+  if(command==="mcp"){const root=baseUrl.replace(/\/$/,"");console.log(/\/mcp(?:\/registry)?$/.test(root)?root:root+"/mcp/registry");return;}
   if(command==="detect"){
     const directory=args[0]&&!args[0].startsWith("--")?args[0]:process.cwd();
     const dependencies=await detectProjectStack(directory);
@@ -131,6 +131,16 @@ async function main(){
     if(!agent)throw new Error("Choose --cursor, --claude, --codex, --vscode, --gemini, --opencode or --copilot");
     const result=await setup(agent,has("--project")?"project":"global",baseUrl,apiKey);
     console.log("Configured Docsy for "+agent+".\nMCP: "+result.mcpUrl+"\nConfig: "+result.configPath+"\nRule: "+result.rulePath);
+    const nextSteps:Partial<Record<Agent,string>>={
+      opencode:"Next: opencode mcp auth docsy; then opencode mcp list.",
+      codex:"Next: codex mcp login docsy (if not authorized during setup); then codex mcp list.",
+      claude:"Next: claude mcp login docsy; then claude mcp list. Alternatively, use /mcp inside Claude Code.",
+      gemini:"Next: open Gemini CLI, run /mcp auth docsy; then gemini mcp list.",
+      cursor:"Next: open Cursor MCP settings, authorize Docsy, then verify the tools.",
+      vscode:"Next: run MCP: List Servers in VS Code, authorize Docsy, then verify the tools.",
+      copilot:"Next: open the Copilot MCP manager, authorize Docsy, then verify the tools."
+    };
+    console.log(nextSteps[agent]);
     return;
   }
   throw new Error("Unknown command: "+command);
